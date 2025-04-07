@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Получите доступ к курсу по крипте</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f1f1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .button {
+      display: inline-block;
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 28px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>🔐 Получите доступ к закрытому крипто-курсу</h1>
+    <p>Нажмите на кнопку ниже, чтобы перейти 👇</p>
+    <a id="offer-link" class="button" href="https://orlovskyi.com/live_ref_v2/?utm_source=512929292&clickid={clickid}">
+      Перейти к курсу
+    </a>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const clickid = urlParams.get("clickid");
+    const offerLink = document.getElementById("offer-link");
+    if (clickid && offerLink) {
+      offerLink.href = offerLink.href.replace("{clickid}", clickid);
+    }
+  </script>
+</body>
+</html>
